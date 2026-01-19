@@ -1,0 +1,12 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="alternate" type="application/atom+xml" title="{{ .Site.Title }}" href="/feed.atom">
+{{ with .Params.header }}
+{{ $img := $.Resources.GetMatch . }}
+{{ if $img }}
+<meta property="og:image" content="{{ $img.Permalink }}">
+{{ end }}
+{{ end }}

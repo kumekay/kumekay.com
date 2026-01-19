@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>{{ .Site.Title }}</title>
+  <link href="{{ .Permalink }}" rel="self"/>
+  <link href="{{ .Site.BaseURL }}"/>
+  <updated>{{ now.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+  <id>{{ .Site.BaseURL }}</id>
+  <author>
+    <name>{{ .Site.Params.author }}</name>
+  </author>
+  {{ $posts := where .Site.RegularPages "Section" "posts" }}
+  {{ range first 20 ($posts.ByDate.Reverse) }}
+  <entry>
+    <title>{{ .Title }}</title>
+    <link href="{{ .Permalink }}"/>
+    <id>{{ .Permalink }}</id>
+    <published>{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</published>
+    <updated>{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}</updated>
+    {{ with .Description }}<summary>{{ . }}</summary>{{ end }}
+    <content type="html">{{ .Content | html }}</content>
+  </entry>
+  {{ end }}
+</feed>

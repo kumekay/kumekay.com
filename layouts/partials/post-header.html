@@ -1,0 +1,12 @@
+{{ if .Params.headerHtml }}
+<div class="post-header post-header--html">
+  {{ .Params.headerHtml | safeHTML }}
+</div>
+{{ else if .Params.header }}
+{{ $img := .Resources.GetMatch .Params.header }}
+{{ if $img }}
+<figure class="post-header">
+  <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}">
+</figure>
+{{ end }}
+{{ end }}

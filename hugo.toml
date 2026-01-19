@@ -1,0 +1,38 @@
+baseURL = 'https://kumekay.com/'
+languageCode = 'en-us'
+title = 'kumekay'
+
+# Disable default theme
+theme = ''
+
+# URL structure - preserve Ghost URLs
+[permalinks.page]
+posts = '/:slug/'
+
+# Taxonomies
+[taxonomies]
+tag = 'tags'
+
+# Atom feed configuration
+[mediaTypes.'application/atom+xml']
+suffixes = ['atom']
+
+[outputFormats.atom]
+mediaType = 'application/atom+xml'
+baseName = 'feed'
+noUgly = true
+
+[outputs]
+home = ['html', 'atom']
+section = ['html']
+taxonomy = ['html']
+term = ['html']
+
+# Markdown rendering
+[markup.goldmark.renderer]
+unsafe = true # Allow raw HTML in markdown (for headerHtml)
+
+# Site params
+[params]
+description = 'Personal blog by kumekay'
+author = 'kumekay'

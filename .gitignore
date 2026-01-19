@@ -1,0 +1,32 @@
+# Hugo output directories
+public/
+resources/
+
+# Hugo cache
+.hugo_build.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Node modules (if using npm for CSS/postcss)
+node_modules/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Environment variables
+.env
+.env.*
+
+# Temporary files
+tmp/
+temp/

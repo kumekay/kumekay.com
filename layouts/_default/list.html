@@ -1,0 +1,18 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<section class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="post-preview">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+{{ end }}
