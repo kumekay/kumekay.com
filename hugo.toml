@@ -2,8 +2,7 @@ baseURL = 'https://kumekay.com/'
 languageCode = 'en-us'
 title = 'kumekay'
 
-# Disable default theme
-theme = ''
+
 
 # URL structure - preserve Ghost URLs
 [permalinks.page]
