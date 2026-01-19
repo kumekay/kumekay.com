@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["hugo", "nginx"]
+
+[phases.build]
+cmds = ["hugo --minify"]
+
+[start]
+cmd = "nginx -c /app/nginx.conf"

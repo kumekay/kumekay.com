@@ -34,5 +34,4 @@ unsafe = true # Allow raw HTML in markdown (for headerHtml)
 
 # Site params
 [params]
-description = 'Personal blog by kumekay'
-author = 'kumekay'
+author = 'Sergei Silnov'
