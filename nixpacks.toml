@@ -5,4 +5,4 @@ nixPkgs = ["hugo", "nginx"]
 cmds = ["hugo --minify"]
 
 [start]
-cmd = "nginx -c /app/nginx.conf"
+cmd = "nginx -e /dev/stderr -c /app/nginx.conf"
