@@ -12,17 +12,9 @@ posts = '/:slug/'
 [taxonomies]
 tag = 'tags'
 
-# Atom feed configuration
-[mediaTypes.'application/atom+xml']
-suffixes = ['atom']
-
-[outputFormats.atom]
-mediaType = 'application/atom+xml'
-baseName = 'feed'
-noUgly = true
 
 [outputs]
-home = ['html', 'atom']
+home = ['html', 'rss']
 section = ['html']
 taxonomy = ['html']
 term = ['html']

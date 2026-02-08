@@ -4,9 +4,20 @@
 <section class="post-list">
   {{ range .Pages.ByDate.Reverse }}
   <article class="post-preview">
-    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    {{ if ne $.Kind "term" }}
+    <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    {{ end }}
+    {{ $page := . }}
+    {{ with .Resources.GetMatch .Params.image }}
+    {{ $image := .Resize "1600x" }}
+    <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}" class="feature-image-link">
+      <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="feature-image">
+    </a>
+    {{ end }}
     <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-    {{ with .Description }}<p>{{ . }}</p>{{ end }}
+    <div class="post-summary">
+      {{ .Summary }}
+    </div>
     {{ with .Params.tags }}
     <div class="tags">
       {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
