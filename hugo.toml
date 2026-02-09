@@ -2,9 +2,6 @@ baseURL = 'https://kumekay.com/'
 languageCode = 'en-us'
 title = 'kumekay'
 
-
-
-# URL structure - preserve Ghost URLs
 [permalinks.page]
 posts = '/:slug/'
 
