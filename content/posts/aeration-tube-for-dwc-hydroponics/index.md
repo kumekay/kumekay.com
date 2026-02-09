@@ -16,7 +16,7 @@ There are a few ways to fix this. One pretty popular is to use an air compressor
 
 Couple months ago I received a new [Prusa Mini](https://www.prusa3d.com/original-prusa-mini/) 3d-printer and yet didn't make anything that requires the full height of the printer. So this 180mm high design was born:
 
-![](Aerator-1.png)
+![](Aerator-1.jpg)
 
 Cross-section of aeration tube
 

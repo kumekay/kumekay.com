@@ -10,7 +10,7 @@ image: "bill-jelen-woWf_VJ7dNs-unsplash.jpg"
 
 Updated 28.10.2021: Corrected installation flow, init way + notes on VScode server
 
-![](image.png)
+![](image.jpg)
 
 [WSL2](https://docs.microsoft.com/en-us/windows/wsl/wsl2-index) is a great way to run Linux alongside Windows 10/11. However, systemd [doesn't work](https://github.com/microsoft/WSL/issues/994) in it yet.
 

@@ -11,7 +11,7 @@ I have a zillion of different USB powered devices that require dumb simple 5V su
 
 Schematics is dead simple 5V in parallel, and shortcut D+ and D- lines. All devices I've tried - including iOS and Android phones charge just fine.
 
-![](Annotation-2020-05-27-234346.png)![](Annotation-2020-05-27-234433.png)
+![](Annotation-2020-05-27-234346.jpg)![](Annotation-2020-05-27-234433.jpg)
 
 Case is 3d printed and designed in Fusion 360 ([thingiverse](https://www.thingiverse.com/thing:4402947)) and can be printed diagonally on a printer with at least 18x18cm build plate, like mine Original Prusa Mini.
 

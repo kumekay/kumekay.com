@@ -31,7 +31,7 @@ The keyboard consisting of two halves, each with five keys, arranged to be conve
 
 It is programmed to enter numbers from 0 to 9. Not very useful, but my task is simply to learn to type anything with my feet. A more useful scenario can be thought of later.
 
-![](IMG_0521.png)
+![](IMG_0521.jpg)
 
 I played with it for about a week and to be honest, I did not achieve much. I learned to press the buttons well with my big toe, pinky, and more or less with my index toe, but not at all with my ring and middle toes.
 

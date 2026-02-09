@@ -28,7 +28,7 @@ Determined to have my cake and eat it too, I designed my solution: a tiny foldab
 
 No invention is without its challenges. The entire structure operates on Bluetooth, meaning the left half connects to the computer, while the right half links to the left. Consequently, the left half's battery drains faster. It's hard to solve the problem entirely, but in the folded state both parts are connected and can be charged together with one USB cable. Another design challenge was the choice of switches. I opted for the thinnest available, the [Kailh PG1425 X-switch](https://www.kailhswitch.com/mechanical-keyboard-switches/low-profile-key-switches/low-profile-switch-for-notebook.html). While they're sleek, the keycap options are limited. Only one option exists. And there are no options with bumps to find home position. I tried drilling holes, but it didn't work well. Eventually, I designed custom frames around keycaps to tackle this.
 
-![](image-1.png)
+![](image-1.jpg)
 
 **Tailored to Perfection**
 
@@ -36,7 +36,7 @@ The layout is based on the [miryoku](https://github.com/manna-harbour/miryoku) d
 
 More unusual is the placement of modifier keys. Shifts are positioned under the index fingers, a quick press results in a letter, while a longer press acts as a modifier. The Command, Alt, and Control keys work the same way located in the default positions.
 
-![](image.png)
+![](image.jpg)
 
 **Quality Comes at a Price**
 

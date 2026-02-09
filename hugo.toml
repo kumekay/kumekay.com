@@ -12,9 +12,16 @@ posts = '/:slug/'
 [taxonomies]
 tag = 'tags'
 
+# Custom output format for Atom feed
+[mediaTypes."application/atom+xml"]
+suffixes = ["atom"]
+
+[outputFormats.Atom]
+mediaType = "application/atom+xml"
+baseName = "feed"
 
 [outputs]
-home = ['html', 'rss']
+home = ['html', 'rss', 'Atom']
 section = ['html']
 taxonomy = ['html']
 term = ['html']

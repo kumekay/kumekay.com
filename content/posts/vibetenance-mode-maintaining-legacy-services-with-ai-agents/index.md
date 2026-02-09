@@ -5,7 +5,7 @@ draft: false
 slug: "vibetenance-mode-maintaining-legacy-services-with-ai-agents"
 tags: []
 author: "Sergei Silnov"
-image: "image-1-1.png"
+image: "image-1-1.jpg"
 ---
 
 This article can be summarized as: if there's a legacy service no one wants to maintain, doing it with an agent is a better option.

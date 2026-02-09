@@ -30,7 +30,7 @@ My first choice was the tiny breakout board from WaveShare, which contains every
 
 So, my initial attempt looked like this:
 
-![](IMG_0119.png)
+![](IMG_0119.jpg)
 
 It’s a nice pocketable brick that works. However, I quickly encountered some limitations of this breakout board. The System-On-Chip (BCM2711) at the heart of both the RPI4 and CM4 has only one USB 2.0 lane. The regular Raspberry Pi has 4 USB 3.0 ports but it uses a special chip that converts PCIe lane (also the only one) to USB 3.0 ports. Unfortunately, our tiny board doesn’t have this feature.
 

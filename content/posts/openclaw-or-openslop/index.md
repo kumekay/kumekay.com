@@ -5,7 +5,7 @@ draft: false
 slug: "openclaw-or-openslop"
 tags: []
 author: "Sergei Silnov"
-image: "openmess.png"
+image: "openmess.jpg"
 ---
 
 If you are a software developer in early 2026, you have probably heard of [OpenClaw](https://openclaw.ai) (known as ClawdBot or MoltBot just a few weeks ago).
