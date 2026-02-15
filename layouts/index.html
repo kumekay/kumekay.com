@@ -16,6 +16,9 @@
     <div class="post-summary">
       {{ .Summary }}
     </div>
+    {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}" class="read-more">Continue reading &rarr;</a>
+    {{ end }}
     {{ with .Params.tags }}
     <div class="tags">
       {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}

@@ -1,6 +1,9 @@
 {{ define "main" }}
 <div class="utoolek-header">
-  <h1>{{ .Title }}</h1>
+  <div>
+    <h1>{{ .Title }}</h1>
+    {{ with .Content }}<div class="section-description">{{ . }}</div>{{ end }}
+  </div>
   <input type="text" id="search-input" placeholder="Search tools..." autocomplete="off">
 </div>
 

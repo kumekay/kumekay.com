@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1>{{ .Title }}</h1>
+{{ with .Content }}<div class="section-description">{{ . }}</div>{{ end }}
 
 <section class="post-list">
   {{ range .Pages.ByDate.Reverse }}
@@ -17,7 +18,7 @@
       {{ .Summary }}
     </div>
     {{ if .Truncated }}
-    <a href="{{ .RelPermalink }}" class="read-more">Continue reading &rarr;</a>
+    <a href="{{ .RelPermalink }}" class="read-more">Читать дальше &rarr;</a>
     {{ end }}
     {{ with .Params.tags }}
     <div class="tags">

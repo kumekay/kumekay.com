@@ -1,7 +1,10 @@
 <header class="site-header">
   <nav>
-    <a href="/" class="site-title {{ if eq .Section "" }}active{{ end }}">kumekay</a>
-    <a href="/utoolek/" class="{{ if eq .Section "utoolek" }}active{{ end }}">utoolek</a>
+    <a href="/" class="site-title">kumekay</a>
+    <span class="nav-separator">|</span>
+    <a href="/" class="{{ if or .IsHome (eq .Section "posts") }}active{{ end }}">blog</a>
+    <a href="/utoolek/" class="{{ if eq .Section "utoolek" }}active{{ end }}">útoolek</a>
     <a href="/drozdi/" class="{{ if eq .Section "drozdi" }}active{{ end }}">дрожжи</a>
+    <a href="/index.xml" class="nav-rss" title="RSS">RSS</a>
   </nav>
 </header>

@@ -27,6 +27,16 @@ body {
   margin: 0;
 }
 
+.section-description {
+  color: var(--color-meta);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+.section-description p {
+  margin: 0;
+}
+
 #search-input {
   font-family: inherit;
   font-size: 1rem;
@@ -88,6 +98,16 @@ body {
 
 .tool-summary p {
   margin: 0;
+}
+
+.tool-summary ul,
+.tool-summary ol {
+  padding-left: 1.5rem;
+  margin: 0.3rem 0 0;
+}
+
+.tool-summary li {
+  margin: 0.15rem 0;
 }
 
 .github-link {

@@ -113,11 +113,33 @@ a.feature-image-link:hover {
 
 .site-header nav a.active {
   color: var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  padding-bottom: 2px;
+}
+
+.nav-separator {
+  color: var(--color-border);
+  user-select: none;
+}
+
+.nav-rss {
+  margin-left: auto;
+  font-size: 0.875rem;
 }
 
 .site-description {
   color: var(--color-meta);
   margin-bottom: 2rem;
+}
+
+.section-description {
+  color: var(--color-meta);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-description p {
+  margin: 0;
 }
 
 /* Post List */
