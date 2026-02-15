@@ -1,0 +1,49 @@
+:root {
+  --color-bg: #fdf2f0;
+  --color-text: #2a2a2a;
+  --color-meta: #666;
+  --color-link: #2a2a2a;
+  --color-link-bg: #fff9db;
+  --color-link-underline: transparent;
+  --color-border: #e8d8d5;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+a {
+  background: var(--color-link-bg);
+  padding: 0 2px;
+  border-bottom: none;
+}
+
+a:hover {
+  background: #fff3b0;
+}
+
+/* Keep nav links clean */
+.site-header nav a {
+  background: none;
+  padding: 0;
+}
+
+/* Tags */
+.tag {
+  background: #f5e6e3;
+  color: var(--color-meta);
+  border-bottom: none;
+}
+
+.tag:hover {
+  background: #edd5d1;
+}
+
+/* Continue reading link */
+.continue-reading {
+  font-size: 0.9rem;
+  color: var(--color-meta);
+  margin-top: 0.5rem;
+  display: inline-block;
+}
