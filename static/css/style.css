@@ -99,6 +99,22 @@ a.feature-image-link:hover {
   background: none;
 }
 
+.site-header nav a {
+  background: none;
+  border-bottom: none;
+  padding: 0;
+  color: var(--color-meta);
+}
+
+.site-header nav a:hover {
+  color: var(--color-text);
+  background: none;
+}
+
+.site-header nav a.active {
+  color: var(--color-text);
+}
+
 .site-description {
   color: var(--color-meta);
   margin-bottom: 2rem;
