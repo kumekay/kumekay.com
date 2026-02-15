@@ -10,6 +10,8 @@ image: "P7250297.JPG"
 
 Some time ago, I began using my iPad more actively, not only for content consumption but also for creative tasks. Additionally, I have it connected to a stage manager which makes it almost a good replacement for a laptop. Almost, because I cannot code on it. I not only do web development but also play with embedded devices, and I need to directly connect devices to flash firmware and run a debugger on a chip.
 
+<!--more-->
+
 A common solution to this is to connect a Raspberry Pi to it. The method for setting up and connecting is described in a [number](https://www.youtube.com/watch?v=4PAdeZ4aokk) of [videos](https://www.youtube.com/watch?v=A3qn1nqw-Gw).
 
 It works, but there are a few things I don’t like about this setup:

@@ -14,6 +14,8 @@ This is not a completely new keyboard, but a remake of the Crabapplepad V2 into 
 
 It uses a couple of friction hinges, similar to ones used for laptop lids. I bought them on AliExpress, because I wasn't able to find anything suitable in local shops. They are quite strong (about 2Nm), and the keyboard can stay in any position; it is even sturdy enough to use on my lap. I am actually typing this note on it while sitting in a coffee shop.
 
+<!--more-->
+
 ![](4943.jpg)
 
 It uses the original Crabapplepad V2 board cut into three pieces and reconnected with silicone-insulated wires—the most flexible kind available. The PCB was designed with this possibility in mind; the holes for wires were already there, even though I hadn't yet finalized the design for a foldable version.

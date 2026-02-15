@@ -9,6 +9,8 @@ author: "Sergei Silnov"
 
 This guide explains how to mount a `qcow2` disk image to a Linux machine. While the initial command might differ for other distributions, the core steps remain consistent. This example is tailored for Debian 12.
 
+<!--more-->
+
 ### 1. Install QEMU Tools
 
 First, install the necessary QEMU utilities, which provide the `qemu-nbd` tool.

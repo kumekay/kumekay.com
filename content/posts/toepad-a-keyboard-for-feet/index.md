@@ -14,6 +14,8 @@ Is it possible to use toes practically? Apparently, yes! Certain cultures and tr
 
 After some practice, individuals can improve their foot mobility and coordination. It's worth giving it a try.
 
+<!--more-->
+
 ![](IMG_1215_Original.jpeg)
 
 Nonetheless, there is one problem. As someone who resides in a civilized urban area, I spend most of my time wearing shoes, if not sneakers, then slippers. Socks are also typically worn. Luckily, there is an easy solution - finger socks!

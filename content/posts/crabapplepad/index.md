@@ -14,6 +14,8 @@ For a whole decade, I was loyal to my Microsoft Natural Ergonomic 4000 keyboard.
 
 As much as I loved my stationary keyboards, they weren't cut out for the mobile life. The available options didn't match the ergonomic standards I had grown used to. Sure, the Microsoft keyboard wasn't perfect, but the problems with most traditional keyboards are glaring. For one, our agile thumbs are wasted on a single space key, while our little fingers, especially when coding, bear an unfair load. The asymmetry of keyboard halves, the diagonal movement of fingers, and the excessive number of keys all bothered me.
 
+<!--more-->
+
 **Crafting My Own**
 
 Determined to have my cake and eat it too, I designed my solution: a tiny foldable ultraslim keyboard split into two halves. Essentially, two independent keyboards. It comes with a built-in mobile phone holder, perfect for coffee shop scenarios. Plus, with my MacBook and iPad in mind, the keyboard can extend and magnetically attach to an Apple trackpad. The result? A versatile piece of tech.

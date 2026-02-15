@@ -12,6 +12,8 @@ Generative AI has made it significantly easier to produce large volumes of code.
 
 While this can sometimes enable developers to build functionality beyond their traditional limits, it more often results in bloated software and reduced overall code quality.
 
+<!--more-->
+
 As programming shifts from using formal programming languages to using natural language, the generated code becomes an intermediate representation — and the true “source code” is the English description of the task. Consequently, the quality of the specification defines the quality of the final product.
 
 This fundamental change requires moving away from traditional agile approaches where developers jump into coding with minimal upfront planning. The practice of writing limited specifications is no longer adequate, as LLMs will otherwise make too many assumptions about the system you are building.

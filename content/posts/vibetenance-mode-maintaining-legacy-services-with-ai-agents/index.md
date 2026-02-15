@@ -14,6 +14,8 @@ If you've used coding agents for some time, you already know what to do, and thi
 
 But I'll still add a couple of details.
 
+<!--more-->
+
 ## The Problem
 
 Every single company I worked for had a number of old web services created at some point. It happened that the original authors were not around anymore.

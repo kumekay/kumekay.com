@@ -17,6 +17,8 @@ Now it's possible to [Windows Subsystem for Linux](https://www.microsoft.com/sto
 
 I would like to use USB devices inside WSL2, however, it doesn't support USB pass-through yet. [VirtualHere](https://www.virtualhere.com/) allows to pass USB devices from windows to WSL2 through the network but it requires USBIP support from the Linux kernel. Also, all the drivers should be built into it or built as modules. As of 5.10.60.1, it includes support for USB-IP and FTDI USB-UART converters, but missing support for others, including the popular SiLabs CP210\* series. So let's build our own kernel with this driver.
 
+<!--more-->
+
 All instructions are given for Ubuntu 20.04 or Debian bullseye on the WSL side and Windows 11 as a host. Windows 10 21h2 should work too, but I didn't try.
 
 To build the kernel first install a compiler and required libs:

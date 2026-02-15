@@ -18,6 +18,8 @@ It is a "nerdy" app (you have to use the terminal to install it) with the highes
 
 There is a reason for this: it works surprisingly well. It solves problems. It can do things no other product can, and you only need a few minutes to install and configure it.
 
+<!--more-->
+
 Of course, I tried it myself. I deployed it on one of my unused computers. And wow, it works. It knows you. It has memory. It has its own personality. But it also has "hands" to actually help you—for example, it organized my [Obsidian](https://obsidian.md) notes and medical records. This is why I genuinely like it.
 
 But at the same time, I **hate** it. I want to remove it and never open it again. Let me explain.

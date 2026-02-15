@@ -10,6 +10,8 @@ image: "IMG_20200426_124137-2.jpg"
 
 I used to build many different hydroponic systems, but most of them are installed in Industra - maker space in Brno. Now, sitting at home on quarantine I don't go the space that often, but still want to grow some lettuces.
 
+<!--more-->
+
 The one was built is a simple [Deep Water Culture (DWC)](https://en.wikipedia.org/wiki/Deep_water_culture) - a bucket with a nutrient solution and a plant floating on the surface with a piece of polystyrene foam. That's it. This works nicely, but only for several days. Then plants suck all the oxygen dissolved in the water and roots will start to rot.
 
 There are a few ways to fix this. One pretty popular is to use an air compressor, like those used fishes in aquariums. However air pumps are somewhat loud, so the idea is to replace it with a tiny DC water pump. It will push the nutrient solution through the central channel, then it flows down by a spiral that provides a relatively large surface area to contact with air and saturates it with oxygen.

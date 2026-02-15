@@ -16,6 +16,8 @@ Updated 28.10.2021: Corrected installation flow, init way + notes on VScode serv
 
 Luckily, there is a 3rd-party solution - [genie](https://github.com/arkane-systems/genie).  It creates a PID namespace, so systemd can run with PID 1 in it. Ther  While it's not a full replacement with a number of known [issues](https://github.com/arkane-systems/genie#bugs), it allows running some common Linux daemons on your WSL2 instance, for example, docker or [Syncthing](https://syncthing.net/).
 
+<!--more-->
+
 Here are the steps for Ubuntu 20.04 or Debian bullseye, if you use another distro, please, check docs in the [project's repo](https://github.com/arkane-systems/genie)
 
 In super user shell (`sudo -s`) run:
