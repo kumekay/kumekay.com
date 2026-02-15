@@ -1,0 +1,30 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+<section class="post-list">
+  {{ range .Pages.ByDate.Reverse }}
+  <article class="post-preview">
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    {{ $page := . }}
+    {{ with .Resources.GetMatch .Params.image }}
+    {{ $image := .Resize "1600x" }}
+    <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}" class="feature-image-link">
+      <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="feature-image">
+    </a>
+    {{ end }}
+    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    <div class="post-summary">
+      {{ .Summary }}
+    </div>
+    {{ if .Truncated }}
+    <a href="{{ .RelPermalink }}" class="read-more">Continue reading &rarr;</a>
+    {{ end }}
+    {{ with .Params.tags }}
+    <div class="tags">
+      {{ range . }}<a href="/tags/{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
+    </div>
+    {{ end }}
+  </article>
+  {{ end }}
+</section>
+{{ end }}
