@@ -122,8 +122,11 @@ a.feature-image-link:hover {
   user-select: none;
 }
 
-.nav-rss {
+.nav-spacer {
   margin-left: auto;
+}
+
+.nav-rss {
   font-size: 0.875rem;
 }
 

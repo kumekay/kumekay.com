@@ -5,17 +5,17 @@ tags: ["cli", "git", "python"]
 date: 2026-02-15
 ---
 
-A minimal CLI tool for cloning git repositories.
+I just want to keep some structure of the repositories I check out locally.
+So it just does this. Clones GitHub repos to worspace/[owner]/[repo] and other sources (i.e. GitLab) to prefixed with service name.
+And then changes directory to the cloned repo. It is a simple wrapper around `git clone` with some path management.
 
-- Supports **multiple URL formats**
-- Works with GitHub, GitLab, Gitea
 
 <!--more-->
 
 ## Installation
 
 ```bash
-pip install cloner
+uv tool install git+https://github.com/kumekay/cloner.git
 ```
 
 ## Usage

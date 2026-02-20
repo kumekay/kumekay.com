@@ -1,14 +1,29 @@
 # AGENTS.md - Project Documentation for AI Agents
 
 ## Project Overview
-Hugo-based personal blog for kumekay.com. Migrated from Ghost.
+Hugo-based personal blog for kumekay.com. Migrated from Ghost. Has 3 independent sections with unique designs.
+
+## Site Sections
+
+| Section | Path | Content | Stylesheet |
+|---------|------|---------|------------|
+| Main (posts) | `/` | English technical posts | `style.css` |
+| utoolek | `/utoolek/` | Tools with GitHub links | `utoolek.css` (warm monochrome) |
+| drozdi | `/drozdi/` | Russian informal posts | `drozdi.css` (pale pink/yellow) |
 
 ## Key Directories
-- `content/posts/{slug}/` - Blog posts as Hugo Page Bundles (index.md + images)
+- `content/posts/{slug}/` - Main blog posts (English, technical)
+- `content/utoolek/{slug}/` - Tool entries with GitHub links
+- `content/drozdi/{slug}/` - Russian blog posts
 - `layouts/` - Hugo templates
+- `layouts/utoolek/` - utoolek section templates (list.html, single.html, list.json)
+- `layouts/drozdi/` - drozdi section templates (list.html, single.html)
 - `layouts/partials/` - Reusable template components (head.html, header.html, footer.html)
-- `static/css/style.css` - Main stylesheet
+- `static/css/` - Stylesheets (style.css, utoolek.css, drozdi.css)
+- `static/js/fuse.search.js` - Fuse.js search for utoolek section
 - `static/images/` - Global static images
+- `scripts/telegram_notify.py` - Telegram auto-posting for drozdi
+- `.github/workflows/telegram-notify.yml` - GitHub Actions workflow for Telegram
 
 ## Blog Post Structure (Page Bundles)
 ```

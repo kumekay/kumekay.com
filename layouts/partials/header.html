@@ -5,6 +5,8 @@
     <a href="/" class="{{ if or .IsHome (eq .Section "posts") }}active{{ end }}">blog</a>
     <a href="/utoolek/" class="{{ if eq .Section "utoolek" }}active{{ end }}">útoolek</a>
     <a href="/drozdi/" class="{{ if eq .Section "drozdi" }}active{{ end }}">дрожжи</a>
+    <span class="nav-spacer"></span>
+    <a href="/about/" class="{{ if eq .RelPermalink "/about/" }}active{{ end }}">about</a>
     <a href="/index.xml" class="nav-rss" title="RSS">RSS</a>
   </nav>
 </header>
