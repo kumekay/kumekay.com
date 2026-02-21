@@ -33,3 +33,9 @@ temp/
 
 # Development Helper Files 
 dev_files/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
