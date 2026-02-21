@@ -1,6 +1,7 @@
 # AGENTS.md - Project Documentation for AI Agents
 
 ## Project Overview
+
 Hugo-based personal blog for kumekay.com. Migrated from Ghost. Has 3 independent sections with unique designs.
 
 ## Site Sections
@@ -12,6 +13,7 @@ Hugo-based personal blog for kumekay.com. Migrated from Ghost. Has 3 independent
 | drozdi | `/drozdi/` | Russian informal posts | `drozdi.css` (pale pink/yellow) |
 
 ## Key Directories
+
 - `content/posts/{slug}/` - Main blog posts (English, technical)
 - `content/utoolek/{slug}/` - Tool entries with GitHub links
 - `content/drozdi/{slug}/` - Russian blog posts
@@ -26,7 +28,8 @@ Hugo-based personal blog for kumekay.com. Migrated from Ghost. Has 3 independent
 - `.github/workflows/telegram-notify.yml` - GitHub Actions workflow for Telegram
 
 ## Blog Post Structure (Page Bundles)
-```
+
+```text
 content/posts/my-post/
 ├── index.md          # Post content with frontmatter
 ├── feature.jpg       # Feature image (referenced in frontmatter as `image: "feature.jpg"`)
@@ -34,6 +37,7 @@ content/posts/my-post/
 ```
 
 ### Frontmatter Example
+
 ```yaml
 ---
 title: "Post Title"
@@ -49,12 +53,15 @@ image: "feature.jpg"  # Relative to bundle directory
 ## Templates
 
 ### Image Processing
+
 - Homepage/list images: `.Resize "1600x"` (preserves aspect ratio, 4K-friendly)
 - Single post header: `.Resize "2400x"` (preserves aspect ratio, 4K-friendly)
 - Use `.Resize` to preserve aspect ratio, not `.Fill` which crops
 
 ### Template Context in Loops
+
 When inside a `range` loop with nested `with` blocks, save the page context:
+
 ```go
 {{ range .Pages }}
   {{ $page := . }}
@@ -67,6 +74,7 @@ When inside a `range` loop with nested `with` blocks, save the page context:
 ## Styling
 
 ### CSS Variables
+
 ```css
 --content-width: 720px;    /* Text content max-width */
 --wide-width: 900px;       /* Images and container max-width */
@@ -74,19 +82,26 @@ When inside a `range` loop with nested `with` blocks, save the page context:
 ```
 
 ### Font
+
 Uses "Forum" from Google Fonts (with Cyrillic support).
 
 ### Mobile Responsive
+
 Media query at `max-width: 600px` adjusts layout for phones.
 
 ## Common Commands
+
 ```bash
 hugo server -D          # Run dev server with drafts
 hugo                    # Build static site
+pre-commit run --all-files   # Run all linters (ruff + markdownlint)
+uv run --with pytest --with python-frontmatter pytest scripts/test_telegram_notify.py  # Run tests
 ```
 
 ## Migration Script
+
 `migrate_ghost.py` - Converts Ghost JSON export to Hugo Page Bundles.
+
 - Downloads images from kumekay.com
 - Creates proper frontmatter
 - Organizes images per-post

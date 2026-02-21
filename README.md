@@ -99,7 +99,7 @@ The Atom feed is available at `/index.atom` and includes all published posts sor
 
 ## Project Structure
 
-```
+```text
 kumekay.com/
 ├── config.toml                 # Hugo configuration
 ├── content/
@@ -134,6 +134,7 @@ hugo --cleanDestinationDir
 ### Adding New Features
 
 For significant changes to the blog functionality:
+
 1. Create an OpenSpec proposal: `openspec/changes/{change-id}/`
 2. Validate: `openspec validate {change-id} --strict --no-interactive`
 3. Get approval before implementation

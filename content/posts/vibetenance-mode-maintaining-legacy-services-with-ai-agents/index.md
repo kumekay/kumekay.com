@@ -40,7 +40,7 @@ You can use any agent system (Claude Code, Cursor, GitHub Copilot, OpenCode), bu
 
 The prompt can be something like this:
 
-```
+```text
 Take your time to go through the entire codebase and document all important details of this project in the `AGENTS.md` file.
 
 This project will be maintained by an engineer with medium proficiency and sometimes questionable taste. He also tends to use uncommon practices, but usually follows written guidelines. So, make the instructions in `AGENTS.md` sufficient to follow existing logic, procedures, and coding style. Help him maintain this project as well as possible and describe the onboarding process: how to set up the local development environment, run tests, and linters.
@@ -55,6 +55,6 @@ You'll have two files to review:
 
 And I would also add a line to the README to make it fair:
 
-```
+```text
 The project is in 'Vibetenance mode.' Do not add any new features and ask the agent to make the fixes.
 ```
