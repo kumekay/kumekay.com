@@ -21,6 +21,7 @@ html {
   --color-link-underline: #ff6b1a;
   --color-meta: #a0a0a0;
   --color-border: #333;
+  --color-code-bg: #333;
   --content-width: 720px;
   --wide-width: 900px;
   --side-padding: 1.5rem;
@@ -293,9 +294,19 @@ a.feature-image-link:hover {
   border-radius: 4px;
 }
 
-.post-content code {
+code {
   font-family: "SF Mono", Monaco, Consolas, monospace;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  background: var(--color-code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre code {
+  font-size: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .post-content blockquote {

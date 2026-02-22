@@ -6,6 +6,7 @@
   --color-link-bg: transparent;
   --color-link-underline: #ccc;
   --color-border: #e0e0e0;
+  --color-code-bg: #e8e8e8;
 }
 
 body {
@@ -134,3 +135,4 @@ body {
   background: #f0f0f0;
   color: var(--color-meta);
 }
+
