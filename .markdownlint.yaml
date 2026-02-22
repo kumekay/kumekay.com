@@ -1,0 +1,28 @@
+# markdownlint configuration for Hugo blog
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+default: true
+
+# Allow inline HTML (used in Hugo shortcodes and posts)
+MD033: false
+
+# Allow duplicate headings (common in blog posts)
+MD024: false
+
+# Line length - disable for prose
+MD013: false
+
+# Allow trailing punctuation in headings (Russian titles)
+MD026: false
+
+# First heading doesn't need to be h1 (Hugo injects title from frontmatter)
+MD041: false
+
+# Allow bold text used as visual section dividers in blog posts
+MD036: false
+
+# Allow images without alt text (photo-heavy posts, decorative images)
+MD045: false
+
+# Allow ordered list prefix style variations
+MD029: false

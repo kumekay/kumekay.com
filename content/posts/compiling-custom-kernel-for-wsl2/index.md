@@ -9,7 +9,7 @@ author: "Sergei Silnov"
 
 **Updated** 19.11.2021: Add note on runnins usbipd from WSL
 
-**Updated** *08.11.2021:*  Add metntion [usbipd-win](https://github.com/dorssel/usbipd-win )
+**Updated** *08.11.2021:*  Add metntion [usbipd-win](https://github.com/dorssel/usbipd-win )
 
 **Updated** *28.10.2021*: The most recent kernel 5.10.60.1 has enabled USB-IP support, but only a few drivers for USB devices are enabled, so these instructions still make sense.
 
@@ -17,11 +17,13 @@ Now it's possible to [Windows Subsystem for Linux](https://www.microsoft.com/sto
 
 I would like to use USB devices inside WSL2, however, it doesn't support USB pass-through yet. [VirtualHere](https://www.virtualhere.com/) allows to pass USB devices from windows to WSL2 through the network but it requires USBIP support from the Linux kernel. Also, all the drivers should be built into it or built as modules. As of 5.10.60.1, it includes support for USB-IP and FTDI USB-UART converters, but missing support for others, including the popular SiLabs CP210\* series. So let's build our own kernel with this driver.
 
+<!--more-->
+
 All instructions are given for Ubuntu 20.04 or Debian bullseye on the WSL side and Windows 11 as a host. Windows 10 21h2 should work too, but I didn't try.
 
 To build the kernel first install a compiler and required libs:
 
-```
+```bash
 sudo apt update -y
 sudo apt install -y \
   autoconf \
@@ -38,19 +40,19 @@ sudo apt install -y \
 
 Check your kernel version with `uname -r`. In my case, it's `5.10.60.1-microsoft-standard-WSL2+` so the relevant branch is `linux-msft-wsl-5.10.y`. As for now, it's the default one, but this may change later.
 
-```
+```bash
 git clone https://github.com/microsoft/WSL2-Linux-Kernel.git ~/kernel
 ```
 
 And copy the default Microsoft kernel config to the working directory. It will be a good starting point.
 
-```
+```bash
 cd ~/kernel && cp Microsoft/config-wsl .config
 ```
 
 Let's configure the kernel:
 
-```
+```bash
 make menuconfig
 ```
 
@@ -64,26 +66,26 @@ It will be also nice to modify the local version in the kernel name. You can fin
 
 Save the changes and exit, now it's time to build the kernel:
 
-```
+```bash
 make -j $(nproc)
 ```
 
 Copy kernel to windows partition where it can be loaded by WSL2:
 
-```
+```bash
 cp arch/x86/boot/bzImage /mnt/c/Users/<UserName>/kernel
 ```
 
 And create a WSL config file: `/mnt/c/Users/<UserName>/.wslconfig` with the content:
 
-```
+```ini
 [wsl2]
 kernel=C:\\Users\\<UserName>\\kernel
 ```
 
 The last step is to restart the WSL:
 
-```
+```bash
 wsl.exe --shutdown
 ```
 

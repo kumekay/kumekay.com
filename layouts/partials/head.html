@@ -6,6 +6,11 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
+{{ if eq .Section "utoolek" }}
+<link rel="stylesheet" href="/css/utoolek.css">
+{{ else if eq .Section "drozdi" }}
+<link rel="stylesheet" href="/css/drozdi.css">
+{{ end }}
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
 {{ with .Params.header }}
 {{ $img := $.Resources.GetMatch . }}

@@ -21,6 +21,7 @@ html {
   --color-link-underline: #ff6b1a;
   --color-meta: #a0a0a0;
   --color-border: #333;
+  --color-code-bg: #333;
   --content-width: 720px;
   --wide-width: 900px;
   --side-padding: 1.5rem;
@@ -99,9 +100,50 @@ a.feature-image-link:hover {
   background: none;
 }
 
+.site-header nav a {
+  background: none;
+  border-bottom: none;
+  padding: 0;
+  color: var(--color-meta);
+}
+
+.site-header nav a:hover {
+  color: var(--color-text);
+  background: none;
+}
+
+.site-header nav a.active {
+  color: var(--color-text);
+  border-bottom: 2px solid var(--color-text);
+  padding-bottom: 2px;
+}
+
+.nav-separator {
+  color: var(--color-border);
+  user-select: none;
+}
+
+.nav-spacer {
+  margin-left: auto;
+}
+
+.nav-rss {
+  font-size: 0.875rem;
+}
+
 .site-description {
   color: var(--color-meta);
   margin-bottom: 2rem;
+}
+
+.section-description {
+  color: var(--color-meta);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-description p {
+  margin: 0;
 }
 
 /* Post List */
@@ -252,9 +294,19 @@ a.feature-image-link:hover {
   border-radius: 4px;
 }
 
-.post-content code {
+code {
   font-family: "SF Mono", Monaco, Consolas, monospace;
-  font-size: 0.9em;
+  font-size: 0.8em;
+  background: var(--color-code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+}
+
+pre code {
+  font-size: inherit;
+  background: none;
+  padding: 0;
+  border-radius: 0;
 }
 
 .post-content blockquote {

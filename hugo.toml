@@ -11,9 +11,13 @@ tag = 'tags'
 
 [outputs]
 home = ['html', 'rss']
-section = ['html']
+section = ['html', 'json']
 taxonomy = ['html']
 term = ['html']
+
+[outputFormats.JSON]
+baseName = 'index'
+mediaType = 'application/json'
 
 # Markdown rendering
 [markup.goldmark.renderer]

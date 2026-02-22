@@ -1,0 +1,30 @@
+name: Telegram Notify
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/drozdi/**'
+  pull_request:
+    paths:
+      - 'content/drozdi/**'
+  workflow_dispatch:
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v6
+
+      - name: Send to Telegram
+        run: uv run scripts/telegram_notify.py
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ github.event_name == 'push' && secrets.TELEGRAM_CHAT_ID || secrets.TELEGRAM_TEST_CHAT_ID }}
+          SITE_URL: ${{ vars.SITE_URL }}

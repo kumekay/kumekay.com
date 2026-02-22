@@ -1,10 +1,11 @@
 {{ define "main" }}
+<h1>{{ .Title }}</h1>
+{{ with .Content }}<div class="section-description">{{ . }}</div>{{ end }}
 
 <section class="post-list">
-  {{ $posts := where .Site.RegularPages "Section" "posts" }}
-  {{ range $posts.ByDate.Reverse }}
+  {{ range .Pages.ByDate.Reverse }}
   <article class="post-preview">
-    <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
     {{ $page := . }}
     {{ with .Resources.GetMatch .Params.image }}
     {{ $image := .Resize "1600x" }}
@@ -17,7 +18,7 @@
       {{ .Summary }}
     </div>
     {{ if .Truncated }}
-    <a href="{{ .RelPermalink }}" class="read-more">Continue reading &rarr;</a>
+    <a href="{{ .RelPermalink }}" class="read-more">Читать дальше &rarr;</a>
     {{ end }}
     {{ with .Params.tags }}
     <div class="tags">
