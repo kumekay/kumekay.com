@@ -181,6 +181,19 @@ class TestFormatMessage:
         msg = format_message("T", "some body", "https://example.com")
         assert "some body" in msg
 
+    def test_format_preview_anchor_is_first(self):
+        """Post URL must appear first so Telegram generates a link preview."""
+        url = "https://kumekay.com/drozdi/test/"
+        msg = format_message("Title", "body", url)
+        assert msg.startswith(f'<a href="{url}">')
+
+    def test_format_preview_anchor_is_invisible(self):
+        """Anchor text should be invisible (zero-width space)."""
+        url = "https://kumekay.com/drozdi/test/"
+        msg = format_message("Title", "body", url)
+        # The anchor at the top should use an invisible character
+        assert f'<a href="{url}">&#8203;</a>' in msg
+
 
 # --- telegram_send_message tests ---
 

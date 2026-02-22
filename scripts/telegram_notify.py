@@ -102,9 +102,13 @@ def truncate_html(html, limit):
 
 
 def format_message(title, body_html, post_url):
-    """Format the full Telegram message."""
-    link_line = f'<a href="{post_url}">Читать на kumekay.com</a>'
-    return f"<b>{title}</b>\n\n{body_html}\n\n{link_line}"
+    """Format the full Telegram message.
+
+    The invisible anchor at the top makes Telegram generate a link preview
+    for the post URL (Telegram only previews the first URL in a message).
+    """
+    preview_anchor = f'<a href="{post_url}">&#8203;</a>'
+    return f"{preview_anchor}<b>{title}</b>\n\n{body_html}"
 
 
 def telegram_send_message(text):
