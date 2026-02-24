@@ -32,19 +32,22 @@ def get_changed_drozdi_files():
     head_commit = os.environ.get("HEAD_COMMIT", "HEAD")
 
     # If BASE_COMMIT is a zero SHA (e.g., first push of a new branch), fallback
-    if base_commit == "0000000000000000000000000000000000000000" or not base_commit:
+    NULL_SHA = "0" * 40
+    if base_commit == NULL_SHA or not base_commit:
         base_commit = "HEAD~1"
 
     print(f"Checking for new posts between {base_commit} and {head_commit}")
 
-    result = subprocess.run(
-        ["git", "diff", "--name-only", "--diff-filter=A", base_commit, head_commit],
-        capture_output=True,
-        text=True,
-    )
-    if result.returncode != 0:
-        print(f"Git diff error: {result.stderr}")
-        return []
+    try:
+        result = subprocess.run(
+            ["git", "diff", "--name-only", "--diff-filter=A", base_commit, head_commit],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"Git diff error: {e.stderr}")
+        raise
 
     files = []
     for line in result.stdout.strip().splitlines():
