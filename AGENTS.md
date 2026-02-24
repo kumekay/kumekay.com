@@ -89,13 +89,22 @@ Uses "Forum" from Google Fonts (with Cyrillic support).
 
 Media query at `max-width: 600px` adjusts layout for phones.
 
+## Python Development
+
+Use red/green TDD for all Python script changes:
+
+1. **Red**: Write a failing test first
+2. **Green**: Write minimal code to make the test pass
+3. **Refactor**: Clean up while keeping tests green
+
+Test command: `uv run --with pytest --with python-frontmatter pytest scripts/test_telegram_notify.py -v`
+
 ## Common Commands
 
 ```bash
 hugo server -D          # Run dev server with drafts
 hugo                    # Build static site
 pre-commit run --all-files   # Run all linters (ruff + markdownlint)
-uv run --with pytest --with python-frontmatter pytest scripts/test_telegram_notify.py  # Run tests
 ```
 
 ## Migration Script
