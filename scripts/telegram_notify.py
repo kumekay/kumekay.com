@@ -123,8 +123,7 @@ def format_message(title, body_html, post_url):
     The anchor at the top makes Telegram generate a link preview
     for the post URL (Telegram only previews the first URL in a message).
     """
-    preview_anchor = f'<a href="{post_url}"><b>{title}</b></a>'
-    return f"{preview_anchor}\n\n{body_html}"
+    return f"{title}\n\n{post_url}\n\n{body_html}"
 
 
 def telegram_send_message(text):
