@@ -1,6 +1,7 @@
 ---
 title: "Однорукий агент"
 date: 2026-02-19
+slug: "gambling"
 tags: ["AI", "addiction"]
 image: "gambling.png"
 ---

@@ -4,6 +4,8 @@ title = 'kumekay'
 
 [permalinks.page]
 posts = '/:slug/'
+utoolek = '/utoolek/:slug/'
+drozdi = '/drozdi/:slug/'
 
 # Taxonomies
 [taxonomies]

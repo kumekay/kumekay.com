@@ -1,5 +1,6 @@
 ---
 title: "cloner"
+slug: "cloner"
 github: "https://github.com/kumekay/cloner"
 tags: ["cli", "git", "python"]
 date: 2026-02-15
