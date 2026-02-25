@@ -173,26 +173,17 @@ class TestTruncateHtml:
 class TestFormatMessage:
     def test_format_includes_title_and_link(self):
         msg = format_message("Title", "body html", "https://kumekay.com/drozdi/test/")
-        assert "<b>Title</b>" in msg
+        assert "Title" in msg
         assert "https://kumekay.com/drozdi/test/" in msg
-        assert "Читать на kumekay.com" in msg
 
     def test_format_includes_body(self):
         msg = format_message("T", "some body", "https://example.com")
         assert "some body" in msg
 
-    def test_format_preview_anchor_is_first(self):
-        """Post URL must appear first so Telegram generates a link preview."""
+    def test_format_structure(self):
         url = "https://kumekay.com/drozdi/test/"
         msg = format_message("Title", "body", url)
-        assert msg.startswith(f'<a href="{url}">')
-
-    def test_format_preview_anchor_is_invisible(self):
-        """Anchor text should be invisible (zero-width space)."""
-        url = "https://kumekay.com/drozdi/test/"
-        msg = format_message("Title", "body", url)
-        # The anchor at the top should use an invisible character
-        assert f'<a href="{url}">&#8203;</a>' in msg
+        assert msg == "Title\n\nhttps://kumekay.com/drozdi/test/\n\nbody"
 
 
 # --- telegram_send_message tests ---
@@ -263,7 +254,7 @@ class TestProcessPost:
 
         mock_send.assert_called_once()
         sent_text = mock_send.call_args[0][0]
-        assert "<b>Test Post</b>" in sent_text
+        assert "Test Post" in sent_text
         assert "kumekay.com" in sent_text
 
     @patch("telegram_notify.telegram_send_message")
@@ -304,7 +295,8 @@ class TestGetChangedDrozdiFiles:
     @patch("telegram_notify.subprocess.run")
     def test_filters_drozdi_files(self, mock_run):
         mock_run.return_value = MagicMock(
-            stdout="content/drozdi/post1/index.md\ncontent/posts/other.md\nREADME.md\n"
+            stdout="content/drozdi/post1/index.md\ncontent/posts/other.md\nREADME.md\n",
+            returncode=0,
         )
         result = get_changed_drozdi_files()
         assert result == ["content/drozdi/post1/index.md"]
@@ -312,7 +304,8 @@ class TestGetChangedDrozdiFiles:
     @patch("telegram_notify.subprocess.run")
     def test_excludes_section_index(self, mock_run):
         mock_run.return_value = MagicMock(
-            stdout="content/drozdi/_index.md\ncontent/drozdi/post1/index.md\n"
+            stdout="content/drozdi/_index.md\ncontent/drozdi/post1/index.md\n",
+            returncode=0,
         )
         result = get_changed_drozdi_files()
         assert "content/drozdi/_index.md" not in result

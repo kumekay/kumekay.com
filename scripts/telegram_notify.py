@@ -27,12 +27,28 @@ TELEGRAM_TEXT_LIMIT = 4096
 
 
 def get_changed_drozdi_files():
-    """Find markdown files changed under content/drozdi/ in the last commit."""
-    result = subprocess.run(
-        ["git", "diff", "--name-only", "HEAD~1", "HEAD"],
-        capture_output=True,
-        text=True,
-    )
+    """Find markdown files added under content/drozdi/ in the commit range."""
+    base_commit = os.environ.get("BASE_COMMIT", "HEAD~1")
+    head_commit = os.environ.get("HEAD_COMMIT", "HEAD")
+
+    # If BASE_COMMIT is a zero SHA (e.g., first push of a new branch), fallback
+    NULL_SHA = "0" * 40
+    if base_commit == NULL_SHA or not base_commit:
+        base_commit = "HEAD~1"
+
+    print(f"Checking for new posts between {base_commit} and {head_commit}")
+
+    try:
+        result = subprocess.run(
+            ["git", "diff", "--name-only", "--diff-filter=A", base_commit, head_commit],
+            capture_output=True,
+            text=True,
+            check=True,
+        )
+    except subprocess.CalledProcessError as e:
+        print(f"Git diff error: {e.stderr}")
+        raise
+
     files = []
     for line in result.stdout.strip().splitlines():
         if line.startswith("content/drozdi/") and line.endswith(".md"):
@@ -104,11 +120,10 @@ def truncate_html(html, limit):
 def format_message(title, body_html, post_url):
     """Format the full Telegram message.
 
-    The invisible anchor at the top makes Telegram generate a link preview
+    The anchor at the top makes Telegram generate a link preview
     for the post URL (Telegram only previews the first URL in a message).
     """
-    preview_anchor = f'<a href="{post_url}"><b>{title}</b></a>'
-    return f"{preview_anchor}\n\n{body_html}"
+    return f"{title}\n\n{post_url}\n\n{body_html}"
 
 
 def telegram_send_message(text):
