@@ -20,7 +20,7 @@ Hugo-based personal blog for kumekay.com. Migrated from Ghost. Has 3 independent
 - `layouts/` - Hugo templates
 - `layouts/utoolek/` - utoolek section templates (list.html, single.html, list.json)
 - `layouts/drozdi/` - drozdi section templates (list.html, single.html)
-- `layouts/partials/` - Reusable template components (head.html, header.html, footer.html)
+- `layouts/partials/` - Reusable template components (head.html, header.html, footer.html, post-header.html)
 - `static/css/` - Stylesheets (style.css, utoolek.css, drozdi.css)
 - `static/js/fuse.search.js` - Fuse.js search for utoolek section
 - `static/images/` - Global static images
@@ -55,7 +55,7 @@ image: "feature.jpg"  # Relative to bundle directory
 ### Image Processing
 
 - Homepage/list images: `.Resize "1600x"` (preserves aspect ratio, 4K-friendly)
-- Single post header: `.Resize "2400x"` (preserves aspect ratio, 4K-friendly)
+- Single post feature image: `.Resize "2400x"` (preserves aspect ratio, 4K-friendly)
 - Use `.Resize` to preserve aspect ratio, not `.Fill` which crops
 
 ### Template Context in Loops

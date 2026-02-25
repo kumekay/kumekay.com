@@ -183,7 +183,7 @@ class TestFormatMessage:
     def test_format_structure(self):
         url = "https://kumekay.com/drozdi/test/"
         msg = format_message("Title", "body", url)
-        assert msg == "Title\n\nhttps://kumekay.com/drozdi/test/\n\nbody"
+        assert msg == "https://kumekay.com/drozdi/test/\n\nTitle\n\nbody"
 
 
 # --- telegram_send_message tests ---

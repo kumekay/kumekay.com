@@ -21,7 +21,7 @@ import frontmatter
 
 TELEGRAM_BOT_TOKEN = os.environ.get("TELEGRAM_BOT_TOKEN", "")
 TELEGRAM_CHAT_ID = os.environ.get("TELEGRAM_CHAT_ID", "")
-SITE_URL = os.environ.get("SITE_URL", "https://kumekay.com").rstrip("/")
+SITE_URL = (os.environ.get("SITE_URL") or "https://kumekay.com").rstrip("/")
 
 TELEGRAM_TEXT_LIMIT = 4096
 
@@ -123,7 +123,7 @@ def format_message(title, body_html, post_url):
     The anchor at the top makes Telegram generate a link preview
     for the post URL (Telegram only previews the first URL in a message).
     """
-    return f"{title}\n\n{post_url}\n\n{body_html}"
+    return f"{post_url}\n\n{title}\n\n{body_html}"
 
 
 def telegram_send_message(text):
@@ -156,7 +156,7 @@ def process_post(filepath):
     metadata, body = parse_frontmatter(content)
 
     title = metadata.get("title", path.parent.name)
-    slug = path.parent.name
+    slug = metadata.get("slug", path.parent.name)
     post_url = f"{SITE_URL}/drozdi/{slug}/"
 
     body_html = markdown_to_telegram_html(body)
