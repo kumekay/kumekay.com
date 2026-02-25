@@ -36,11 +36,7 @@ title: "Your Post Title"
 date: 2026-01-19
 tags: ["tag1", "tag2"]
 description: "Brief description for SEO and social sharing"
-header: "media/header.jpg"  # Optional: header image
-# OR for interactive headers:
-headerHtml: |
-  <canvas id="hero"></canvas>
-  <script src="media/hero.js"></script>
+image: "feature.jpg"  # Optional: feature image (place in same directory)
 ---
 
 Write your post content here in markdown.
@@ -53,41 +49,24 @@ EOF
 - `date` (required): Publication date (YYYY-MM-DD)
 - `tags` (optional): Array of tag strings for categorization
 - `description` (optional): Meta description for SEO
-- `header` (optional): Path to header image relative to post directory
-- `headerHtml` (optional): HTML snippet for interactive headers (canvas/WebGL)
+- `image` (optional): Feature image filename relative to post directory
 
 ### Adding Media
 
-Place images and other media in the `media/` subdirectory of your post:
+Place images directly in the post directory:
 
 ```bash
 content/posts/your-post-slug/
 ├── index.md
-└── media/
-    ├── header.jpg
-    ├── diagram.png
-    └── hero.js
+├── feature.jpg    # Referenced as image: "feature.jpg"
+└── diagram.png    # Additional images
 ```
 
 Reference images in markdown using relative paths:
 
 ```markdown
-![Alt text](media/diagram.png)
+![Alt text](diagram.png)
 ```
-
-### Interactive Headers
-
-For WebGL or canvas headers:
-
-```yaml
----
-headerHtml: |
-  <canvas id="hero"></canvas>
-  <script src="media/hero.js"></script>
----
-```
-
-The HTML is rendered directly above the post content. Place your WebGL/canvas initialization code in `media/hero.js`.
 
 ### Tag Pages
 
@@ -107,7 +86,7 @@ kumekay.com/
 │   └── posts/
 │       └── {slug}/
 │           ├── index.md        # Post content
-│           └── media/          # Post assets
+│           └── *.jpg, *.png    # Post images
 ├── layouts/                    # Custom Hugo templates
 ├── static/                     # Static assets (CSS, favicon)
 └── public/                     # Generated site (not in git)
