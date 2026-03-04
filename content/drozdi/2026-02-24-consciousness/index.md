@@ -1,5 +1,5 @@
 ---
-title: "У LLM нет сознания (пока что)."
+title: "У LLM нет сознания (пока что)"
 date: 2026-02-24T22:19:27+01:00
 slug: "consciousness"
 tags: ["AI", "LLM", "future"]

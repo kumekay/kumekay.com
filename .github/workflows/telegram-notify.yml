@@ -1,14 +1,6 @@
 name: Telegram Notify
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'content/drozdi/**'
-  pull_request:
-    paths:
-      - 'content/drozdi/**'
   workflow_dispatch:
 
 jobs:
