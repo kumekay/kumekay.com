@@ -7,7 +7,7 @@
     <time datetime="{{ .Date.Format " 2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
     {{ $page := . }}
     {{ with .Resources.GetMatch .Params.image }}
-    {{ $image := .Resize "1600x" }}
+    {{ $image := .Resize "1600x jpg" }}
     <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}" class="feature-image-link">
       <img src="{{ $image.RelPermalink }}" alt="{{ $page.Title }}" class="feature-image">
     </a>

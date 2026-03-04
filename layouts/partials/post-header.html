@@ -5,8 +5,9 @@
 {{ else if .Params.header }}
 {{ $img := .Resources.GetMatch .Params.header }}
 {{ if $img }}
+{{ $imgConverted := $img.Resize "2400x jpg" }}
 <figure class="post-header">
-  <img src="{{ $img.RelPermalink }}" alt="{{ .Title }}">
+  <img src="{{ $imgConverted.RelPermalink }}" alt="{{ .Title }}">
 </figure>
 {{ end }}
 {{ end }}

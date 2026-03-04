@@ -1,7 +1,7 @@
 {{ define "main" }}
 <article class="post">
   {{ with .Resources.GetMatch .Params.image }}
-  {{ $image := .Resize "2400x" }}
+  {{ $image := .Resize "2400x jpg" }}
   <div class="post-feature-image">
     <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }}">
   </div>
