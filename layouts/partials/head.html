@@ -15,6 +15,7 @@
 {{ with .Params.header }}
 {{ $img := $.Resources.GetMatch . }}
 {{ if $img }}
-<meta property="og:image" content="{{ $img.Permalink }}">
+{{ $imgConverted := $img.Resize "1200x jpg" }}
+<meta property="og:image" content="{{ $imgConverted.Permalink }}">
 {{ end }}
 {{ end }}
