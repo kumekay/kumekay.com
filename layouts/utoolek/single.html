@@ -4,6 +4,13 @@
     <a href="{{ (.Site.GetPage "utoolek").RelPermalink }}">&larr; Back to tools</a>
   </nav>
 
+  {{ with .Resources.GetMatch .Params.image }}
+  {{ $image := .Resize "2400x" }}
+  <div class="post-feature-image" style="margin-bottom: 1.5rem;">
+    <img src="{{ $image.RelPermalink }}" alt="{{ $.Title }}" style="max-width: 100%; height: auto; border-radius: 4px;">
+  </div>
+  {{ end }}
+
   <header class="post-meta">
     <h1>{{ .Title }}</h1>
     <time class="post-date" datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
