@@ -1,7 +1,32 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+{{ $title := cond .IsHome .Site.Title (printf "%s | %s" .Title .Site.Title) }}
+{{ $description := .Description }}
+{{ if and (not $description) .IsPage }}
+{{ $description = .Summary | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 }}
+{{ end }}
+{{ if not $description }}
+{{ $description = .Site.Params.description }}
+{{ end }}
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $description }}">
+{{ if .IsPage }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:type" content="article">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:description" content="{{ $description }}">
+{{ with .Resources.GetMatch .Params.image }}
+{{ $ogImage := .Resize "1200x jpg" }}
+<meta property="og:image" content="{{ $ogImage.Permalink }}">
+{{ end }}
+{{ else }}
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:description" content="{{ $description }}">
+{{ end }}
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Forum&display=swap" rel="stylesheet">
@@ -12,10 +37,3 @@
 <link rel="stylesheet" href="/css/drozdi.css">
 {{ end }}
 <link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="/index.xml">
-{{ with .Params.header }}
-{{ $img := $.Resources.GetMatch . }}
-{{ if $img }}
-{{ $imgConverted := $img.Resize "1200x jpg" }}
-<meta property="og:image" content="{{ $imgConverted.Permalink }}">
-{{ end }}
-{{ end }}
