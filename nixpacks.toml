@@ -1,5 +1,6 @@
 [phases.setup]
 nixPkgs = ["hugo", "nginx"]
+nixpkgsArchive = "71caefce12ba78d84fe618cf61644dce01cf3a96"
 
 [phases.build]
 cmds = ["hugo --minify"]

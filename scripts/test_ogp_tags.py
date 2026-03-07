@@ -64,3 +64,9 @@ def test_post_pages_emit_open_graph_metadata(tmp_path: Path) -> None:
         html = read_page(public_dir, relative_path)
         for fragment in expected_fragments:
             assert fragment in html
+
+
+def test_head_partial_uses_trimspace_again() -> None:
+    head_partial = (ROOT / "layouts" / "partials" / "head.html").read_text()
+
+    assert "strings.TrimSpace" in head_partial
