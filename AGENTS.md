@@ -14,9 +14,12 @@ Hugo-based personal blog for kumekay.com. Migrated from Ghost. Has 3 independent
 
 ## Key Directories
 
-- `content/posts/{slug}/` - Main blog posts (English, technical)
-- `content/utoolek/{slug}/` - Tool entries with GitHub links
-- `content/drozdi/{slug}/` - Russian blog posts
+- `content/posts/{YYYY-MM-DD-slug}/` - Main blog posts (English, technical)
+- `content/utoolek/{YYYY-MM-DD-slug}/` - Tool entries with GitHub links
+- `content/drozdi/{YYYY-MM-DD-slug}/` - Russian blog posts
+
+**Important**: All post/tool directories must include a date prefix in `YYYY-MM-DD-slug` format. The date should match the `date` field in the frontmatter.
+
 - `layouts/` - Hugo templates
 - `layouts/utoolek/` - utoolek section templates (list.html, single.html, list.json)
 - `layouts/drozdi/` - drozdi section templates (list.html, single.html)
