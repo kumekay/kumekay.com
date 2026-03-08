@@ -10,4 +10,4 @@ repos:
     rev: v0.17.2
     hooks:
       - id: markdownlint-cli2
-        args: [--config, .markdownlint.yaml]
+        args: [--config, .markdownlint.yaml, --fix]
